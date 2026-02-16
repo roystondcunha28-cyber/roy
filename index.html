@@ -69,16 +69,42 @@
     </div>
 </section>
 
-<!-- REGISTER -->
 <section id="register">
     <h2>Register Now</h2>
-    <form action="https://formspree.io/f/xykdjwab" method="POST" class="registration-form">
-        <input type="text" name="name" placeholder="Full Name" required>
+
+    <!-- Step 1: College & Lecturer -->
+    <form id="step1" class="registration-step">
+        <h3>Step 1: College & Lecturer Info</h3>
         <input type="text" name="college" placeholder="College Name" required>
         <input type="text" name="course" placeholder="Course" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <button type="submit" class="btn primary">Register Now</button>
+
+        <input type="text" name="lecturer_name" placeholder="Lecturer in-charge Name" required>
+        <input type="tel" name="lecturer_phone" placeholder="Lecturer in-charge Phone" required>
+       
+        <button type="button" class="btn primary" onclick="nextStep(1)">Next</button>
+    </form>
+
+    <!-- Step 2: Event Selection -->
+    <form id="step2" class="registration-step" style="display:none;" action="https://formspree.io/f/xykdjwab" method="POST">
+        <h3>Step 2: Event Selection & Participants</h3>
+
+        <!-- Example Event -->
+        <label><input type="checkbox" name="events" value="UpsideDown Abyss" onclick="updateParticipants(this)"> UpsideDown Abyss</label>
+        <div class="participants" id="UpsideDown Abyss"></div>
+
+        <label><input type="checkbox" name="events" value="Sunken Strategy Quest" onclick="updateParticipants(this)"> Sunken Strategy Quest</label>
+        <div class="participants" id="Sunken Strategy Quest"></div>
+
+        <label><input type="checkbox" name="events" value="The Comeback Arena" onclick="updateParticipants(this)"> The Comeback Arena</label>
+        <div class="participants" id="The Comeback Arena"></div>
+
+        <label><input type="checkbox" name="events" value="Aquavengers – The Oceanic Endgame" onclick="updateParticipants(this)"> Aquavengers – The Oceanic Endgame</label>
+        <div class="participants" id="Aquavengers – The Oceanic Endgame"></div>
+
+        <label><input type="checkbox" name="events" value="Timeless Tides" onclick="updateParticipants(this)"> Timeless Tides</label>
+        <div class="participants" id="Timeless Tides"></div>
+
+        <button type="submit" class="btn primary">Submit Registration</button>
     </form>
 </section>
 
