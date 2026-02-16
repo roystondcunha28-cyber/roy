@@ -1,1 +1,1 @@
-console.log("EXCSELSO’26 Website Loaded Successfully!");
+console.log("EXCSELSO’26 website loaded successfully!");
