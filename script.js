@@ -1,1 +1,1 @@
-console.log("EXCSELSO’26 website loaded successfully!");
+console.log("EXCSELSO’26 Aquatic Website Loaded Successfully!");
