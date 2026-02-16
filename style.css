@@ -1,120 +1,49 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+* { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+body { font-family:'Poppins',sans-serif; background:#0b1c2d; color:white; }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #0b1c2d;
-    color: white;
-}
+/* NAVBAR */
+.navbar { position:fixed; width:100%; background:rgba(0,0,0,0.8); display:flex; justify-content:space-between; padding:15px 40px; z-index:10;}
+.navbar ul { display:flex; list-style:none; }
+.navbar ul li { margin-left:25px; }
+.navbar a { color:white; text-decoration:none; }
 
-.navbar {
-    position: fixed;
-    width: 100%;
-    background: rgba(0,0,0,0.8);
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 40px;
-}
+/* HERO */
+.hero { position:relative; height:100vh; display:flex; justify-content:center; align-items:center; text-align:center; background:linear-gradient(135deg,#0b1c2d,#10273f,#1a3655); overflow:hidden; }
+.hero-overlay { position:absolute; inset:0; background: rgba(0,0,0,0.4);}
+.hero-content { position:relative; z-index:2; }
+.logo-container { display:flex; justify-content:center; align-items:center; gap:40px; margin-bottom:25px;}
+.college-logo { width:100px; filter:drop-shadow(0 0 10px gold); }
+.event-logo { width:140px; filter:drop-shadow(0 0 15px #ffd700); animation:floatLogo 3s ease-in-out infinite alternate; }
+@keyframes floatLogo { from{transform:translateY(0px);} to{transform:translateY(-15px);} }
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-}
+.hero h1 { font-size:4rem; color:gold; margin-bottom:10px;}
+.hero h2 { font-size:1.8rem; margin-bottom:15px; }
+.tagline { font-size:1.2rem; margin-bottom:15px; }
+.badge { background:gold; color:black; padding:8px 20px; border-radius:20px; margin:10px 0; display:inline-block;}
+.details { margin:15px 0; }
+.btn { padding:10px 25px; border-radius:25px; text-decoration:none; font-weight:bold; margin:5px;}
+.primary { background:gold; color:black;}
+.secondary { border:2px solid gold; color:gold; }
 
-.navbar ul li {
-    margin-left: 25px;
-}
+/* SECTIONS */
+section { padding:100px 10%; text-align:center; }
+.dark-section { background:#10273f; }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-}
+/* EVENTS */
+.event-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-top:40px; }
+.event-card { background:#1a3655; padding:25px; border-radius:10px; transition:0.3s; }
+.event-card:hover { transform:translateY(-10px); box-shadow:0 0 20px gold; }
 
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-    url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678') center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+/* REGISTER FORM */
+.registration-form { display:flex; flex-direction:column; width:300px; margin:auto; }
+.registration-form input { margin-bottom:15px; padding:10px; }
 
-.hero h1 {
-    font-size: 4rem;
-    color: gold;
-}
+/* FOOTER */
+footer { background:black; padding:20px; }
 
-.badge {
-    background: gold;
-    color: black;
-    padding: 8px 20px;
-    border-radius: 20px;
-    margin: 15px 0;
-}
-
-.btn {
-    padding: 10px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.primary {
-    background: gold;
-    color: black;
-}
-
-.secondary {
-    border: 2px solid gold;
-    color: gold;
-}
-
-section {
-    padding: 100px 10%;
-    text-align: center;
-}
-
-.dark-section {
-    background: #10273f;
-}
-
-.event-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.event-card {
-    background: #1a3655;
-    padding: 25px;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.event-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px gold;
-}
-
-.registration-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: auto;
-}
-
-.registration-form input {
-    margin-bottom: 15px;
-    padding: 10px;
-}
-
-footer {
-    background: black;
-    padding: 20px;
+/* RESPONSIVE */
+@media(max-width:768px) {
+    .logo-container { flex-direction:column; gap:20px; }
+    .college-logo { width:80px; }
+    .event-logo { width:120px; }
 }
