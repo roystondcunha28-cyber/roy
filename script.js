@@ -1,34 +1,28 @@
-// =============================
-// EVENT RULES TOGGLE
-// =============================
-document.querySelectorAll('.rules-toggle').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    const target = document.getElementById(btn.getAttribute('aria-controls'));
-    const expanded = btn.getAttribute('aria-expanded')==='true';
-    target.hidden = expanded;
-    btn.setAttribute('aria-expanded', !expanded);
+console.log("EXCSELSO’26 Website Loaded Successfully!");
 
-    // Reset list animation
-    if(!expanded){
-      target.querySelectorAll('.animated-list li').forEach(li=>{
-        li.style.opacity=0;
-        li.style.transform='translateY(20px)';
-        setTimeout(()=>{ li.style.opacity=1; li.style.transform='translateY(0)'; }, 100);
-      });
-    }
-  });
+// Rules toggle
+document.querySelectorAll('.rules-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+        const rulesDiv = document.getElementById(button.getAttribute('aria-controls'));
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', !isExpanded);
+        if (rulesDiv.style.display === 'block') {
+            rulesDiv.style.display = 'none';
+        } else {
+            rulesDiv.style.display = 'block';
+        }
+    });
 });
 
-// =============================
-// SCROLL FADE-IN
-// =============================
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold:0.1, rootMargin:'0px 0px -50px 0px' };
-const appearOnScroll = new IntersectionObserver((entries, obs)=>{
-  entries.forEach(entry=>{
-    if(!entry.isIntersecting) return;
-    entry.target.classList.add('show');
-    obs.unobserve(entry.target);
-  });
-}, appearOptions);
-faders.forEach(f=>appearOnScroll.observe(f));
+// Animate event cards on scroll
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('fade-in');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.event-card').forEach(card => {
+    observer.observe(card);
+});
