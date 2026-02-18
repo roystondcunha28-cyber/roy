@@ -40,3 +40,38 @@ document.querySelectorAll('.rules-toggle').forEach(button => {
 document.querySelectorAll('.event-card').forEach(card => {
     observer.observe(card);
 });
+// Carnival Click Animation
+document.querySelectorAll('.rules-toggle').forEach(button => {
+    button.addEventListener('click', (e) => {
+        createSparkles(e.pageX, e.pageY);
+    });
+});
+
+function createSparkles(x, y) {
+    for (let i = 0; i < 10; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        document.body.appendChild(sparkle);
+        
+        const size = Math.random() * 10 + 5;
+        sparkle.style.width = `${size}px`;
+        sparkle.style.height = `${size}px`;
+        sparkle.style.left = `${x}px`;
+        sparkle.style.top = `${y}px`;
+        sparkle.style.background = `gold`;
+        sparkle.style.position = `absolute`;
+        sparkle.style.borderRadius = `50%`;
+        
+        // Simple move animation
+        const destinationX = x + (Math.random() - 0.5) * 100;
+        const destinationY = y + (Math.random() - 0.5) * 100;
+        
+        sparkle.animate([
+            { transform: 'translate(0, 0)', opacity: 1 },
+            { transform: `translate(${destinationX - x}px, ${destinationY - y}px)`, opacity: 0 }
+        ], {
+            duration: 1000,
+            easing: 'ease-out'
+        }).onfinish = () => sparkle.remove();
+    }
+}
