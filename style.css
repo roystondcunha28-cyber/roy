@@ -156,7 +156,7 @@ footer { background:#004f7c; padding:20px; text-align:center; font-size:0.9rem; 
 
 /* 2. GOLD FRAME FOR CONTACT SECTION */
 #contact {
-    position: relative;
+ position: relative;
     border: 5px solid #d4af37; /* Metallic Gold */
     border-image: linear-gradient(45deg, #af8e1c, #fff9ae, #af8e1c) 1;
     padding: 50px;
@@ -164,6 +164,9 @@ footer { background:#004f7c; padding:20px; text-align:center; font-size:0.9rem; 
     box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
     margin: 40px 10%;
     border-radius: 4px; /* Note: border-image disables border-radius, use clip-path if needed */
+} 
+#contact h2 {
+    color: #00b4d8;
 }
 
 /* 3. CARNIVAL ANIMATIONS (Floating & Glowing) */
