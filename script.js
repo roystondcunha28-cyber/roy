@@ -75,3 +75,29 @@ function createSparkles(x, y) {
         }).onfinish = () => sparkle.remove();
     }
 }
+const targetDate = new Date("March 7, 2026 08:30:00").getTime();
+
+const countdown = setInterval(function () {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  document.getElementById("countdown").innerHTML =
+    `<strong>${days}</strong> Days 
+     <strong>${hours}</strong> Hours 
+     <strong>${minutes}</strong> Minutes`;
+
+}, 1000);
+const faders = document.querySelectorAll(".fade-in");
+
+window.addEventListener("scroll", () => {
+  faders.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.classList.add("show");
+    }
+  });
+});
