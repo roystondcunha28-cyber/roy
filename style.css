@@ -9,7 +9,10 @@ a { text-decoration:none; color:white; }
 .navbar ul { display:flex; list-style:none; }
 .navbar ul li { margin-left:20px; }
 .navbar a:hover { color:#00ffff; transition:0.3s; }
-.college-logo-small { width:50px; }
+.college-logo-small {
+    height: 65px;
+    width: auto;
+}
 .instagram-link { display:flex; align-items:center; gap:5px; font-size:0.9rem; }
 .instagram-icon { width:20px; }
 
@@ -70,12 +73,13 @@ footer { background:#004f7c; padding:20px; text-align:center; font-size:0.9rem; 
 @keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
 
 /* RESPONSIVE */
-@media(max-width:768px){
-    .header-top { flex-direction:column; gap:10px; }
-    .college-logo-small {
-    height: 100px;
-    width: 100px;
-}
+@media (max-width: 768px) {
+    .header-top .college-logo-small {
+        height: 80px;
+    }
+    .navbar .college-logo-small {
+        height: 55px;
+    }
    .event-grid { grid-template-columns:1fr; }
 }
 .about-section h2 {
@@ -123,7 +127,9 @@ footer { background:#004f7c; padding:20px; text-align:center; font-size:0.9rem; 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .header-top { flex-direction: column; gap: 10px; }
-    .college-logo-small { width: 40px; }
+    .college-logo-small {
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
     .excelso-logo { width: 100px; margin-top: 10px; }
     .event-grid { grid-template-columns: 1fr; }
     .free-entry { position: static; display: inline-block; margin-top: 15px; }
