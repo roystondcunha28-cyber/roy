@@ -103,12 +103,22 @@ footer { background:#004f7c; padding:20px; text-align:center; font-size:0.9rem; 
     color:white;
 }
 /* EXCSELSO'26 Logo below "Presents" */
-.excelso-logo-container {
-    text-align: center;
-    margin-top: 15px;
-}
 .excelso-logo {
-    width: 420px;
+    width: 700px;
+    max-width: 95%;
+    height: auto;
+    margin: 30px auto;
+    
+    opacity: 0;
+    transform: scale(0.8) translateY(40px);
+    animation: logoReveal 1.5s ease-out forwards;
+}
+
+@keyframes logoReveal {
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
 
 /* General Rules - FREE ENTRY fix for mobile */
@@ -236,7 +246,51 @@ footer { background:#004f7c; padding:20px; text-align:center; font-size:0.9rem; 
 .rules-toggle:hover {
     transform: scale(1.1) rotate(-1deg);
     box-shadow: 0 0 25px #ffd700;
+}
+.site-header {
+    position: relative;
+    text-align: center;
+    padding: 80px 20px;
+    color: white;
+    overflow: hidden;
+    
+    /* Dramatic Gradient Background */
+    background: linear-gradient(135deg, #000814, #001d3d, #003566);
+}
+.site-header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255,215,0,0.2), transparent 60%);
+    animation: rotateLight 15s linear infinite;
+    z-index: 0;
+}
 
+@keyframes rotateLight {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.site-header > * {
+    position: relative;
+    z-index: 1;
+}
+@keyframes glowPulse {
+    0%,100% { filter: drop-shadow(0 0 15px rgba(255,215,0,0.5)); }
+    50% { filter: drop-shadow(0 0 35px rgba(255,215,0,0.9)); }
+}
+
+.excelso-logo {
+    animation: logoReveal 1.5s ease-out forwards, glowPulse 3s infinite;
+}
+@media (max-width: 768px) {
+    .site-header {
+        padding: 60px 15px;
+    }
+}
 
 
 
