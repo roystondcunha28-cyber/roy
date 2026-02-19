@@ -500,6 +500,9 @@ footer { background:#004f7c; padding:20px; text-align:center; font-size:0.9rem; 
         transform: translate(-30%, -50%) scaleX(1.6) scaleY(0.8);
     }
 }
+.navbar i {
+    margin-right: 6px;
+}
 
 
 
