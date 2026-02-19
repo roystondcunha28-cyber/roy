@@ -223,12 +223,9 @@ footer { background:#004f7c; padding:20px; text-align:center; font-size:0.9rem; 
 .rules-toggle:hover {
     transform: scale(1.1) rotate(-1deg);
     box-shadow: 0 0 25px #ffd700;
-}
-.college-logo-small {
-    height: 70px;   /* Increase this (try 70–90px) */
-    width: auto;
 .event-logo {
-    width: 220px;
+    width: 70%;
+    max-width: 250px;
     height: auto;
 }
 
