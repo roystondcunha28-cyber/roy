@@ -108,3 +108,77 @@ if (countdownElement) {
         `;
     }, 1000);
 }
+/* ============================= */
+/* REGISTRATION PREMIUM SECTION  */
+/* ============================= */
+
+.registration-section {
+    padding: 100px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #001f3f, #003566);
+    position: relative;
+}
+
+.register-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #ffd60a;
+}
+
+.register-tagline {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #ffffffcc;
+    letter-spacing: 1px;
+}
+
+.register-countdown {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+#mini-countdown {
+    font-size: 1.5rem;
+    color: #00ffff;
+    margin-top: 10px;
+}
+
+.register-btn {
+    display: inline-block;
+    background: #ffd60a;
+    color: #000;
+    padding: 18px 45px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 214, 10, 0.6);
+    animation: pulseGlow 2s infinite;
+}
+
+.register-btn:hover {
+    transform: scale(1.08);
+    background: #ffc300;
+}
+
+.register-note {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Glow Animation */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 10px rgba(255,214,10,0.6); }
+    50% { box-shadow: 0 0 30px rgba(255,214,10,1); }
+    100% { box-shadow: 0 0 10px rgba(255,214,10,0.6); }
+}
+
+/* Mobile Responsive */
+@media(max-width: 768px) {
+    .register-title { font-size: 1.8rem; }
+    .register-btn { padding: 15px 30px; font-size: 1rem; }
+}
