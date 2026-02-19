@@ -22,7 +22,10 @@ a { text-decoration:none; color:white; }
 .vertical-bar { width:2px; height:40px; background:white; }
 .college-info { font-size:0.9rem; font-weight:600; }
 .department-line { font-size:1.2rem; margin-bottom:10px; font-weight:600; }
-.presents { display:block; font-family:'Playfair Display', serif; font-size:2rem; color:#00ffff; margin-top:5px; }
+.department-line {
+    color: #fff607;
+}
+.presents { display:block; font-family:'Playfair Display', serif; font-size:2rem; color:#fccf31; margin-top:5px; }
 
 /* HERO DETAILS */
 .hero-details { font-size:1.1rem; margin-bottom:40px; }
@@ -104,7 +107,7 @@ footer { background:#004f7c; padding:20px; text-align:center; font-size:0.9rem; 
 }
 /* EXCSELSO'26 Logo below "Presents" */
 .excelso-logo {
-    width: 1500px !important;
+    width: 2000px !important;
     max-width: 98%;
     height: auto;
 }    
@@ -364,7 +367,7 @@ footer { background:#004f7c; padding:20px; text-align:center; font-size:0.9rem; 
     to { background-position: 500px 500px; }
 }
 #countdown {
-    font-size: 22px;
+    font-size: 400px;
     margin-top: 15px;
     color: #ffd60a;
     font-weight: 600;
